@@ -5,27 +5,31 @@
     <meta charset="UTF-8">
     <!-- import CSS -->
     <link rel="stylesheet" href="./css/element-ui.css">
+    <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
     <div id="app">
         <el-container>
-            <el-aside width="200px">Aside</el-aside>
+            <el-aside width="200px">
+                <div class="index-left">ffff</div>
+            </el-aside>
             <el-main>
-
-                <ul class="menu-list">
-                    <li v-for="item,index in menuList">
-                        <a :href="item.href">{{item.title}}</a>
-                        <ul v-if="item.childrens.length">
-                            <li v-for="item2,index2 in item.childrens"><a :href="item2.href">{{item2.title}}</a></li>
-                        </ul>
-                    </li>
-
-
-                </ul>
-
-
+                <div class="index-cards">
+                    
+                </div>
+                <el-row :gutter="20">
+                    <el-col :span="6" v-for="item,index in menuList"><el-card class="box-card" shadow="hover" >
+                        <div slot="header" class="clearfix">
+                            <span>{{item.title}}</span>
+                        </div>
+                        <div v-for="item2,index2 in item.childrens" class="text item">
+                            <a :href="item2.href" class="cards-href">{{item2.title}}</a>
+                        </div>
+                    </el-card></el-col>
+                  </el-row>
             </el-main>
+
         </el-container>
     </div>
 </body>
@@ -33,22 +37,21 @@
 <script src="./js/vue.js"></script>
 <!-- import JavaScript -->
 <script src="./js/element-ui.js"></script>
+<script src="./js/menuList.js"></script>
 <script>
-    let menuList = [{
-        title: 'vue学习',
-        href: 'https://github.com/vimpare/vue-test',
-        childrens: [{
-            title: '安装，插件引入及axios',
-            href: 'https://github.com/vimpare/vue-test/blob/master/vue%E5%AE%89%E8%A3%85%EF%BC%8C%E6%8F%92%E4%BB%B6%E5%BC%95%E5%85%A5%20axios.md',
-            childrens: []
-        }]
-    }];
+    // let menuList =menuList ;
     new Vue({
         el: '#app',
         data: function () {
             return {
                 visible: false,
-                menuList:menuList
+                menuList: menuList,
+                activeNames: ['1']
+            }
+        },
+        methods: {
+            handleChange(val) {
+                console.log(val);
             }
         }
     })
