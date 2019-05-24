@@ -9,9 +9,12 @@ div {
 
 #app {
     width: 1190px;
-    margin: 200px auto;
+    margin: 100px auto 0px;
 }
-
+a{
+    text-decoration: none;
+    color:#222;
+}
 .index-left {
     background: #beba93;
     border-radius: 4px;
@@ -23,14 +26,17 @@ div {
     font-size:10px;
     text-align: center;
 }
-.cards-href {
+.index-main{
+    overflow: hidden;
+}
+a {
     line-height: 30px;
     color: #222;
     text-decoration: none;
     font-size: 14px;
 }
 
-.cards-href:hover {
+a:hover {
     color: #beba93;
     background: linear-gradient(to right, #ff8a00, #da1b60);
     -webkit-background-clip: text;
@@ -70,19 +76,19 @@ div {
     padding: 1rem;
 }
 
-.cards-row::-webkit-scrollbar {
+::-webkit-scrollbar,.pages-box::-webkit-scrollbar {
     width: 10px;
     height: 10px;
 }
 
-.cards-row::-webkit-scrollbar-thumb {
-    background: #201c29;
+::-webkit-scrollbar-thumb,.pages-box::-webkit-scrollbar-thumb {
+    background: #976c33;
     border-radius: 10px;
     -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
     box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
 }
 
-.cards-row::-webkit-scrollbar-track {
+::-webkit-scrollbar-track .pages-box::-webkit-scrollbar-track{
     background: linear-gradient(to right, #201c29, #201c29 1px, #17141d 1px, #17141d);
 }
 
@@ -94,7 +100,7 @@ div {
     width: 5em;
     height: 5em;
     margin: 1em auto 0;
-    background: url(../images/26374823.jfif)  no-repeat center;
+    background: url(../images/26374823.png)  no-repeat center;
     background-size: 40px 40px;
    
 }
@@ -103,3 +109,38 @@ div {
     display: block;
     overflow: visible;
 }
+.time {
+    font-size: 13px;
+    color: #999;
+  }
+  
+  .bottom {
+    margin-top: 13px;
+    line-height: 12px;
+  }
+
+  .button {
+    padding: 0;
+    float: right;
+  }
+
+  .image {
+    width: 100%;
+    display: block;
+  }
+
+  .clearfix:before,
+  .clearfix:after {
+      display: table;
+      content: "";
+  }
+  
+  .clearfix:after {
+      clear: both
+  }
+  .pages-box{
+      width:100%;
+      padding:20px;
+      display: flex;
+      overflow-x: auto;
+  }
