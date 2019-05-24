@@ -10,24 +10,47 @@
 
 <body>
     <div id="app">
-        <el-container>
+        <el-container class="index-container">
             <el-aside width="200px">
-                <div class="index-left">ffff</div>
+                <div class="index-left">
+                    <div class="circular">
+                        <svg viewBox="0 0 100 100">
+                            <path d="M 0,50 a 50,50 0 1,1 0,1 z" id="circle" />
+                            <text>
+                                <textPath xlink:href="#circle"> v i m p a r e . g i t h u b . i o </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="-tips">Rome was not built in one day</div>
+                </div>
             </el-aside>
             <el-main>
                 <div class="index-cards">
-                    
+
                 </div>
-                <el-row :gutter="20">
-                    <el-col :span="6" v-for="item,index in menuList"><el-card class="box-card" shadow="hover" >
-                        <div slot="header" class="clearfix">
-                            <span>{{item.title}}</span>
-                        </div>
-                        <div v-for="item2,index2 in item.childrens" class="text item">
-                            <a :href="item2.href" class="cards-href">{{item2.title}}</a>
-                        </div>
-                    </el-card></el-col>
-                  </el-row>
+                <el-row :gutter="20" class="cards-row">
+                    <el-col v-for="item,index in menuList" class="cards-wrap">
+                        <el-card class="box-card" shadow="hover">
+                            <div slot="header" class="clearfix">
+                                <span>{{item.title}}</span>
+                            </div>
+                            <div v-for="item2,index2 in item.childrens" class="text item">
+                                <a :href="item2.href" class="cards-href">{{item2.title}}</a>
+                            </div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+                <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+                    <el-menu-item index="1">处理中心</el-menu-item>
+                    <el-submenu index="2">
+                        <template slot="title">我的工作台</template>
+                        <el-menu-item index="2-1">选项1</el-menu-item>
+                        <el-menu-item index="2-2">选项2</el-menu-item>
+                        <el-menu-item index="2-3">选项3</el-menu-item>
+                    </el-submenu>
+                </el-menu>
+                <div class="line"></div>
+               
             </el-main>
 
         </el-container>
@@ -46,12 +69,17 @@
             return {
                 visible: false,
                 menuList: menuList,
-                activeNames: ['1']
+                activeNames: ['1'],
+                activeIndex: '1',
+                activeIndex2: '1'
             }
         },
         methods: {
             handleChange(val) {
                 console.log(val);
+            },
+            handleSelect(key, keyPath) {
+                console.log(key, keyPath);
             }
         }
     })
