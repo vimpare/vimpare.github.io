@@ -1,25 +1,105 @@
-body{
+body {
     background: #dbd9c3;
-    color:#fff;
+    color: #fff;
 }
-div{
+
+div {
     box-sizing: border-box;
 }
-#app{
-    width:1190px;
-    margin:0 auto;
+
+#app {
+    width: 1190px;
+    margin: 200px auto;
 }
-.index-left{
+
+.index-left {
     background: #beba93;
     border-radius: 4px;
-    height: 100%;
-    padding:20px;
+    height: 230px;
+    padding: 20px;
 }
-.cards-href{
+.index-left .-tips{
+    padding-top:30px;
+    font-size:10px;
+    text-align: center;
+}
+.cards-href {
     line-height: 30px;
-    color:#222;
-    text-decoration:none;
+    color: #222;
+    text-decoration: none;
+    font-size: 14px;
 }
-.cards-href:hover{
-    color:#beba93;
+
+.cards-href:hover {
+    color: #beba93;
+    background: linear-gradient(to right, #ff8a00, #da1b60);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-box-decoration-break: clone;
+    transform: translate(0, -1rem);
+}
+
+.cards-wrap {
+    min-height: 190px;
+    width: 250px;
+}
+
+.box-card {
+    min-height: 190px;
+    box-shadow: -1rem 0 2rem #dbd9c3;
+}
+
+.cards-wrap:focus-within,
+.cards-wrap:hover {
+    -webkit-transform: translate(0, -1rem);
+    transform: translate(0, -1rem);
+}
+
+.cards-wrap:focus-within~.cards-wrap,
+.cards-wrap:hover~.cards-wrap {
+    -webkit-transform: translateX(130px);
+    transform: translateX(130px);
+}
+
+.cards-wrap:not(:first-child) {
+    margin-left: -130px;
+}
+
+.cards-row {
+    overflow-x: auto;
+    padding: 1rem;
+}
+
+.cards-row::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.cards-row::-webkit-scrollbar-thumb {
+    background: #201c29;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, .25), inset -2px -2px 2px rgba(0, 0, 0, .25);
+}
+
+.cards-row::-webkit-scrollbar-track {
+    background: linear-gradient(to right, #201c29, #201c29 1px, #17141d 1px, #17141d);
+}
+
+.circular path {
+    fill: none;
+}
+
+.circular {
+    width: 5em;
+    height: 5em;
+    margin: 1em auto 0;
+    background: url(../images/26374823.png)  no-repeat center;
+    background-size: 40px 40px;
+   
+}
+
+.circular svg {
+    display: block;
+    overflow: visible;
 }
