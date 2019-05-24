@@ -24,7 +24,7 @@
                     <div class="-tips">Rome was not built in one day</div>
                 </div>
             </el-aside>
-            <el-main>
+            <el-main class="index-main">
                 <div class="index-cards">
 
                 </div>
@@ -50,7 +50,18 @@
                     </el-submenu>
                 </el-menu>
                 <div class="line"></div>
-               
+                <el-row class="pages-box">
+                    <el-col :span="12" v-for="(o, index) in 5" :key="o" :offset="index > 0 ? 2 : 0" class="pages-item">
+                        <el-card :body-style="{ padding: '0px' }">
+                            <img src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+                                class="image">
+                            <div style="padding: 14px;">
+                                <a href="https://vimpare.github.io/pages/Magnifier/index.html" title="放大镜">放大镜</a>
+                            </div>
+                        </el-card>
+                    </el-col>
+                </el-row>
+
             </el-main>
 
         </el-container>
@@ -71,7 +82,8 @@
                 menuList: menuList,
                 activeNames: ['1'],
                 activeIndex: '1',
-                activeIndex2: '1'
+                activeIndex2: '1',
+                currentDate: new Date()
             }
         },
         methods: {
