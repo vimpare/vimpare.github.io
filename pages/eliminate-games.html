@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<div class="box">
+			<div class="dec">
+				<p class="dec1">
+					你的鼠标有多快？
+				</p>
+				<p class="dec2">
+					游戏说明：“点击游戏”,随机掉下表情点中它，千万别让它掉下去！！
+				</p>
+			</div>
+			<div class="con">
+				<div class="main">
+					<img src="./images/1.png" />
+					<div class="defen fenshu">
+						<p class="fen">0分</p>
+						<p>得分</p>
+					</div>
+					<div class="sf fenshu">
+						<p class="fen">0分</p>
+						<p>失分</p>
+					</div>
+					<input type="button" value="开始游戏" class="start" />
+				</div>
+			</div>
+		</div>
+
+		<script src="./utils.js"></script>
+		<script>
+			var imgarr = ["images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/6.png"];
+			var defen = $(".fenshu")[0];
+			var shifen = $(".fenshu")[1];
+			var fenshu = $(".fen");
+			var main = $(".main")[0];
+			var start = $(".start")[0];
+			var img = $("img")[0];
+			var n = 0; //失分
+			var m = 0; //得分
+
+			//点击开始游戏
+			start.state = true;
+			start.onclick = function() {
+				if(start.state) { //开始状态为真，按钮下走，开始游戏，左侧计分左移
+					mTween(defen, "left", -100, 500)
+					mTween(shifen, "left", -100, 500)
+					mTween(start, "bottom", -70, 500, "linear", function() {
+						img.style.display = "block";
+						start.value = "结束游戏";
+						tab();
+					})
+					start.state = false;
+				} else {
+					img.style.display = "none";
+					img.style.top = 0;
+
+					fenshu[1].innerHTML = "0分";
+					fenshu[0].innerHTML = "0分";
+					n = m = 0;
+					mTween(defen, "left", 15, 500)
+					mTween(shifen, "left", 15, 500)
+					mTween(start, "bottom", 30, 500, "linear", function() {
+						start.value = "开始游戏";
+					});
+					start.state = true;
+
+				}
+
+				function tab() {
+					if(start.state == true) {
+						return
+					}
+					img.src = imgarr[Math.round(Math.random() * 4)]; //显示图片为随机数
+					img.style.left = Math.random() * 630 + "px"; //左偏移为随机数
+
+					//图片下落，没有划过，掉到底部，窗口抖动
+					mTween(img, "top", 350, 3000, "linear", function() {
+						shake(main, "left", 20, function() { //窗口抖动
+							img.style.top = "0px";
+							n--; //失分一次
+							fenshu[1].innerHTML = n + "分";
+							
+							tab();
+							if(n <= -m) {
+								alert('gameover')
+								img.style.display = "none";
+								img.style.top = 0;
+
+								fenshu[1].innerHTML = "0分";
+								fenshu[0].innerHTML = "0分";
+								n = m = 0;
+								clearInterval(img.timer)
+								mTween(defen, "left", 15, 500)
+								mTween(shifen, "left", 15, 500)
+								mTween(start, "bottom", 30, 500, "linear", function() {
+									start.value = "开始游戏";
+								});
+								start.state = true;
+								return
+							}
+						});
+					})
+					//图片划过时
+					img.onclick = function() {
+						img.src = "./images/5.png"; //换图
+						shake(img, "left", 20, function() { //图片抖动之后回到0
+							img.style.top = "0px"; //回到top0
+							m++; //得分一次
+							fenshu[0].innerHTML = m + "分";
+							tab();
+
+						});
+					}
+				}
+				
+			}
+		</script>
+	</body>
+
+</html>
