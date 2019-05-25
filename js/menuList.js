@@ -21,6 +21,18 @@ let menuList=[{
         title: '职责链模式',
         href: 'https://github.com/vimpare/note/blob/master/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/%E8%81%8C%E8%B4%A3%E9%93%BE%E6%A8%A1%E5%BC%8F.md',
         childrens: []
+    }，{
+        title: '状态模式',
+        href: 'https://github.com/vimpare/note/blob/master/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/16th%20%E7%8A%B6%E6%80%81%E6%A8%A1%E5%BC%8F.md',
+        childrens: []
+    }，{
+        title: '单例模式 策略模式',
+        href: 'https://github.com/vimpare/note/blob/master/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F%20%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F.md',
+        childrens: []
+    }，{
+        title: '组合模式',
+        href: 'https://github.com/vimpare/note/blob/master/JavaScript%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%BC%80%E5%8F%91%E5%AE%9E%E8%B7%B5/%E7%BB%84%E5%90%88%E6%A8%A1%E5%BC%8F.md',
+        childrens: []
     }]
 },{
     title: 'vue学习',
