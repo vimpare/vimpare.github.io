@@ -32,7 +32,7 @@
                     <el-col v-for="item,index in menuList" class="cards-wrap">
                         <el-card class="box-card" shadow="hover">
                             <div slot="header" class="clearfix">
-                                <span>{{item.title}}</span>
+                                <span><a :href="item.href" class="cards-href">{{item.title}}</a></span>
                             </div>
                             <div v-for="item2,index2 in item.childrens" class="text item">
                                 <a :href="item2.href" class="cards-href">{{item2.title}}</a>
