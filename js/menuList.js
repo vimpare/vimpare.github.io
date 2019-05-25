@@ -6,12 +6,12 @@ let menuList=[{
         href: 'https://github.com/vimpare/vue-test/blob/master/vue%E5%AE%89%E8%A3%85%EF%BC%8C%E6%8F%92%E4%BB%B6%E5%BC%95%E5%85%A5%20axios.md',
         childrens: []
     },{
-        title: '安装，插件引入及axios',
-        href: 'https://github.com/vimpare/vue-test/blob/master/vue%E5%AE%89%E8%A3%85%EF%BC%8C%E6%8F%92%E4%BB%B6%E5%BC%95%E5%85%A5%20axios.md',
+        title: 'vue生命周期',
+        href: 'https://github.com/vimpare/vue-test/blob/master/vue%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.md',
         childrens: []
     },{
-        title: '安装，插件引入及axios',
-        href: 'https://github.com/vimpare/vue-test/blob/master/vue%E5%AE%89%E8%A3%85%EF%BC%8C%E6%8F%92%E4%BB%B6%E5%BC%95%E5%85%A5%20axios.md',
+        title: '内置的组件 特殊属性',
+        href: 'https://github.com/vimpare/vue-test/blob/master/%E5%86%85%E7%BD%AE%E7%9A%84%E7%BB%84%E4%BB%B6%20%E7%89%B9%E6%AE%8A%E5%B1%9E%E6%80%A7.md',
         childrens: []
     }]
 }, {
